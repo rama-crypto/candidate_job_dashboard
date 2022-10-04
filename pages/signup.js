@@ -15,11 +15,8 @@ import AuthContext from '../components/auth/AuthContext'
 const SignUp = () => {
     const router = useRouter()
 
-    const { invite } = router.query
-
     const { token } = useContext(AuthContext)
 
-    const [loading, setLoading] = useState(true)
     const [signUpLoading, setSignUpLoading] = useState(false)
 
     const [step, setStep] = useState(0)
@@ -28,7 +25,17 @@ const SignUp = () => {
     const [schoolname, setSchoolName] = useState('')
     const [linkedin, setLinkedIn] = useState('')
 
-    const [questions, setQuestions] = useState([])
+    const questions = [
+        {
+            ques: "Why do you want to join this platform?",
+        }, {
+            ques: "Have you done any internships before",
+        }, {
+            ques: "What do you want to achieve this platform?"
+        }, {
+            ques: "What is your salary expectations?"
+        }
+    ]
 
     const [aone, setAone] = useState('')
     const [atwo, setAtwo] = useState('')
@@ -188,36 +195,23 @@ const SignUp = () => {
         }
     }
 
-    const getSignUpQuestions = async () => {
-        try {
-            console.log('fetching questions')
-            const resp = await getAxiosInstance().get('auth/questions/')
-            console.log('fetched questions', resp.data)
-            setQuestions(resp.data)
-            setLoading(false)
-        } catch (err) {
-            console.log('error while fetching questions', err)
-            setLoading(false)
-        }
-    }
-
     const handleSignUp = async () => {
         setSignUpLoading(true)
         const answers = [
             {
-                ques: questions[0].id,
+                ques: 1,
                 ans: aone,
             },
             {
-                ques: questions[1].id,
+                ques: 2,
                 ans: atwo,
             },
             {
-                ques: questions[2].id,
+                ques: 3,
                 ans: athree,
             },
             {
-                ques: questions[3].id,
+                ques: 4,
                 ans: afour,
             },
         ]
@@ -251,22 +245,10 @@ const SignUp = () => {
     }
 
     useEffect(() => {
-        getSignUpQuestions()
-    }, [])
-
-    useEffect(() => {
         if (token) {
             router.push('/internships/')
         }
     }, [token])
-
-    if (loading) {
-        return (
-            <>
-                <Pageloader />
-            </>
-        )
-    }
 
     return (
         <>
@@ -415,9 +397,9 @@ const SignUp = () => {
                                     {step == 1 && (
                                         <>
                                             <Inputgroup
-                                                label={'School Name'}
+                                                label={'School or Company Name'}
                                                 id={'school-name'}
-                                                placeholder={'DPS Vasant Kunj'}
+                                                placeholder={'Aviate'}
                                                 type={'text'}
                                                 error={
                                                     errors?.['schoolname'] || ''

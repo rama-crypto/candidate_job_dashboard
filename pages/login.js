@@ -77,64 +77,6 @@ const Login = () => {
                                             width={gButtonWidth}
                                         />
                                     )}
-
-                                    {/* <div className="d-flex flex-row align-items-center justify-content-center mt-4 mb-4" style={{ maxWidth: "400px" }}>
-                                        <span className="flex-grow-1 or-side me-4"></span>
-                                        <div className="flex-grow-0">
-                                            <strong>or</strong>
-                                        </div>
-                                        <span className="flex-grow-1 or-side ms-4"></span>
-                                    </div>
-                                    <div className="mb-3" style={{ maxWidth: "400px" }}>
-                                        <label
-                                            className="form-label"
-                                            htmlFor="email"
-                                        >
-                                            <strong>Email address</strong>
-                                        </label>
-                                        <div className="input-group">
-                                            <input
-                                                className="form-control d-block"
-                                                id="email"
-                                                type={'email'}
-                                                placeholder="yourname@gmail.com"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="mb-3"
-                                        style={{ position: 'relative', maxWidth: "400px" }}
-
-                                    >
-                                        <label
-                                            className="form-label"
-                                            htmlFor="password"
-                                        >
-                                            <strong>Password</strong>
-                                        </label>
-                                        <div className="input-group">
-                                            <input
-                                                className="form-control d-block"
-                                                id="password"
-                                                type={'password'}
-                                            />
-                                        </div>
-                                        <span
-                                            className="fc-purple mb-1"
-                                            style={{
-                                                position: 'absolute',
-                                                left: '0px',
-                                                fontWeight: 500,
-                                            }}
-                                        >
-                                            Forgot Password?
-                                        </span>
-                                    </div> */}
-                                    {/* <div className="mt-5" style={{ maxWidth: "400px" }}>
-                                        <button className="w-100 log-in-btn">
-                                            Log In
-                                        </button>
-                                    </div> */}
                                     <div className="mt-3">
                                         <span
                                             style={{ fontWeight: 500 }}
