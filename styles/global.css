@@ -1,0 +1,198 @@
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    /* background: rgba(238, 239, 246, 1); */
+    background-color: white;
+    position: relative;
+}
+
+.emoji-mart-title-label {
+    display: none !important;
+}
+
+.infinite-scroll-component {
+    overflow-x: hidden !important;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+textarea {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.bg-purple {
+    background-color: #5a52b7;
+}
+
+.border-purple {
+    border-color: #5a52b7;
+}
+
+.fc-purple {
+    color: #5a52b7 !important;
+}
+
+.bg-grey {
+    color: #c4c4c4;
+}
+
+.bx-shadow {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.public-DraftEditorPlaceholder-root {
+    font-size: 1rem;
+    color: rgba(219, 219, 219, 1) !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 10px;
+}
+
+.DraftEditor-editorContainer {
+    caret-color: #5a52b7;
+}
+
+.custom-input-group-collection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.custom-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom-input-group .custom-input-group-heading {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 38px;
+}
+
+.custom-input-group-input,
+.custom-input-group-textarea {
+    background: #f2f4f6;
+    border-radius: 8px !important;
+    border: 0px;
+    padding: 10px;
+    width: 100%;
+}
+
+.user-select-none {
+    user-select: none;
+}
+
+.text-break-wrap {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.text-truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-icon {
+    margin-top: 25px;
+    margin-left: 25px;
+    height: 48px;
+    width: 48px;
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.light-grey {
+    background-color: #ebebeb;
+}
+
+.blue-grey {
+    background-color: #e4e8f1;
+}
+
+.dark-blue-grey {
+    background-color: #808397;
+}
+
+.middle-grey {
+    background-color: #dee0e5;
+}
+
+.border-color {
+    border-color: #dee0e5 !important;
+}
+
+.dark-grey {
+    background-color: #626f79;
+}
+
+.custom-placeholder-color::placeholder {
+    color: #dee0e5;
+}
+
+.purple-gradient {
+    background: linear-gradient(
+        270.5deg,
+        #edeffe 2.98%,
+        rgba(255, 255, 255, 0.41) 99.79%
+    );
+}
+
+.btn-size {
+    height: 40px;
+    min-width: 80px;
+}
+
+.br-8 {
+    border-radius: 8px;
+}
+
+.br-5 {
+    border-radius: 5px;
+}
+
+.modal-close-span-btn-hover-color {
+    background-color: #ebebeb;
+}
+
+.green {
+    color: #48d4b3;
+}
+
+.a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+.a:hover {
+    color: inherit;
+}
