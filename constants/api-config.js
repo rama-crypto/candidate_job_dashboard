@@ -3,5 +3,6 @@ const BASE_URLS = {
     staging: 'https://testapi.novaweb.in/',
     prod: 'https://api.novaweb.in/',
 }
-export const API_URL =
-    process.env.BACKEND === 'production' ? BASE_URLS.prod : BASE_URLS.staging
+
+export const API_URL = BASE_URLS.local
+    // process.env.BACKEND === 'production' ? BASE_URLS.prod : BASE_URLS.staging

@@ -14,7 +14,7 @@ export function GoogleSignButton({ width, loginCallBack }) {
             const renderGB = () => {
                 window.google.accounts.id.initialize({
                     client_id:
-                        '580962116990-junjpjhpntld9pvm04nk8qevj1pcnucb.apps.googleusercontent.com',
+                        '242077875297-6njsrbk9q7k6h3pugs56c2rn20gucbqd.apps.googleusercontent.com',
                     callback: handleGoogleSignIn,
                 })
 
