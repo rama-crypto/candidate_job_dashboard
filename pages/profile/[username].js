@@ -69,9 +69,7 @@ const Profile = () => {
         newInterests,
         allTags,
     }) => {
-        console.log(newInterests, 'wkjlrnvkewrblge')
         try {
-            console.log('wekogvnwklegvweokgvmwoekmg')
             const response = await profileApi.updateProfile(
                 newSelectedColor,
                 newHighlight,
@@ -81,7 +79,6 @@ const Profile = () => {
                 newInterests
             )
             console.log('added interests succesfull', interestAddResp)
-            // console.log('erkjbnkjerbijrehnjgvbijergvbjkfrbvhjfrbvkjrfbvkjfrbvkjebvdkfbkb ,dfx mndf nm,dfvnj xbjhgfbv nmdfb vmcds/v,msdv m,ds vnmdf nmdf nm')
             console.log('succesfully updated the modal', response)
             setShowProfileEditModal(false)
         } catch (err) {
@@ -114,11 +111,9 @@ const Profile = () => {
         if (router.isReady) {
             try {
                 let profile = await profileApi.getProfile(username)
-                let followers = await profileApi.getFollowerCount(username)
-                console.log('profile fetched succesfully', profile, followers)
+                console.log('profile fetched succesfully', profile)
                 profile = {
                     ...profile,
-                    ...followers,
                 }
                 setuserProfile(profile)
 
@@ -236,44 +231,6 @@ const Profile = () => {
                                 <p className="tw-text-sm tw-text-grey-400">
                                     {userProfile?.tagline}
                                 </p>
-                            </div>
-
-                            <div className="following-wrapper pb-3">
-                                <span className="num-description">
-                                    <span className="num">
-                                        {' '}
-                                        {userProfile?.followers}{' '}
-                                    </span>
-                                    Followers
-                                    <BsDot size={16} color={'#999FAB'} />
-                                    <span className="num">
-                                        {' '}
-                                        {userProfile?.following}{' '}
-                                    </span>
-                                    Following
-                                </span>
-
-                                {/* <div className="tw-relative">
-                                    <button onClick={() => { setShowDropDown(!showDropDown) }} className="tw-text-xl tw-text-center tw-outline-none tw-border-none tw-bg-white">...</button>
-                                    <ul className="tw-p-0 tw-text-white tw-list-none tw-absolute tw-right-3 tw-bg-white   tw-z-10 tw-border tw-border-[#EEEEEE] tw-rounded-sm  tw-border-solid" style={{ transition: "opacity 0.1s, z-index 0.1s, max-height: 5s", boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.06)" }}>
-                                        <li className={`${!showDropDown ? "tw-hidden" : ""} tw-flex  tw-justify-center tw-w-28 tw-pt-2 tw-pb-2 tw-pr-1 tw-pl-1 tw-list-none`}>
-                                            <a className="tw-text-sm tw-flex tw-items-center  tw-gap-2 tw-text-black tw-no-underline hover:tw-text-black " href="#">
-                                                <svg width="15" height="15" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M15.5833 2.34338C15.824 2.10262 16.1098 1.91164 16.4244 1.78134C16.739 1.65105 17.0761 1.58398 17.4166 1.58398C17.7571 1.58398 18.0942 1.65105 18.4088 1.78134C18.7233 1.91164 19.0092 2.10262 19.2499 2.34338C19.4907 2.58413 19.6817 2.86995 19.812 3.18452C19.9422 3.49908 20.0093 3.83623 20.0093 4.17671C20.0093 4.51719 19.9422 4.85434 19.812 5.1689C19.6817 5.48347 19.4907 5.76929 19.2499 6.01004L6.87492 18.385L1.83325 19.76L3.20825 14.7184L15.5833 2.34338Z" stroke="#999FAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-
-                                                Edit Profile</a>
-                                        </li>
-                                        <li className={`${!showDropDown ? "tw-hidden" : ""} tw-flex  tw-justify-center tw-w-28 tw-pt-2 tw-pb-2 tw-pr-1 tw-pl-1 tw-list-none`}>
-                                            <a onClick={logOutUser} className="tw-text-sm tw-flex tw-items-center  tw-gap-2 tw-text-black tw-no-underline hover:tw-text-black " href="#">
-                                                <Image src="/icons/shutdown.svg" width="15" height="15" alt="Logout Icon" />
-
-
-                                                Log Out
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>  */}
                             </div>
                             {/* <p className="tagline-wrapper pt-2">{profile?.tagline}</p> */}
                             <div className="d-flex flex-wrap pt-3">

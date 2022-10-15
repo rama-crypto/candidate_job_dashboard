@@ -51,18 +51,6 @@ class ProfileApi {
         return resp.data
     }
 
-    async getFollowerCount(username = null) {
-        let url = ''
-        if (username) {
-            url = `community/follow/count/${username}/`
-        } else {
-            url = `community/follow/count`
-        }
-
-        const resp = await this.axiosInstance.get(url)
-        return resp.data
-    }
-
     async addExperience(title, subtitle, start_date, end_date, text) {
         const url = `profile/experience/create/`
         const resp = await this.axiosInstance.post(url, {

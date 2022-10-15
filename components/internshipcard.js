@@ -14,7 +14,7 @@ const Internshipcard = ({ internship }) => {
             <div className="internship-card tw-min-w-[70%]">
                 <div className="tw-flex tw-flex-col">
                     <div className="tw-flex  tw-justify-start tw-m-3">
-                        <div className="tw-w-24 tw-h-24 tw-mr-5" style={{ backgroundImage: `url(${internship.logo})`, borderRadius: "50%", backgroundSize: "cover" }} />
+                        <div className="tw-w-24 tw-h-24 tw-mr-5" style={{ backgroundImage: "/portal_icon.png", borderRadius: "50%", backgroundSize: "cover" }} />
                         <div className="">
                             <h3>{internship.role}</h3>
                             <h5 className="tw-text-sm tw-text-gray-400">{internship.company_name}</h5>

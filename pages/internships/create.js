@@ -8,7 +8,6 @@ const Createinternship = () => {
     const { token } = useContext(AuthContext)
 
     const internApi = useMemo(() => new InternshipsApi(token), [token])
-    const fileInput = useRef()
 
     const [role, setRole] = useState('')
     const [location, setLocation] = useState('')
@@ -25,7 +24,6 @@ const Createinternship = () => {
     const [linkedin, setLinkedin] = useState('')
     const [company_name, setCompany_name] = useState('')
     const [about, setAbout] = useState('')
-    const [file, setFile] = useState()
 
     const [submitErrors, setSubmitErrors] = useState('')
 
@@ -91,20 +89,6 @@ const Createinternship = () => {
             .string()
             .max(800, 'The about should not exceed 800 characters!')
             .required('This is a required field!'),
-        logo: yup
-            .mixed()
-            .nullable()
-            .required('A file is required')
-            .test(
-                'Fichier taille',
-                'upload file',
-                (value) => !value || (value && value.size <= 1024 * 1024)
-            )
-            .test(
-                'format',
-                'upload file',
-                (value) => !value || (value && value.type.startsWith('image/'))
-            ),
     })
 
     const formReset = () => {
@@ -123,8 +107,6 @@ const Createinternship = () => {
         setLinkedin('')
         setCompany_name('')
         setAbout('')
-        setFile({})
-        fileInput.current.value = null
         setSubmitErrors(undefined)
     }
 
@@ -145,7 +127,6 @@ const Createinternship = () => {
             linkedin,
             company_name,
             about,
-            logo: file,
         }
         const isValid = await postInternSchema.isValid(data, {
             abortEarly: false,
@@ -389,27 +370,6 @@ const Createinternship = () => {
                     {submitErrors && submitErrors.get('perks') && (
                         <div className="input-group-submit-error">
                             {submitErrors.get('perks')}
-                        </div>
-                    )}
-                </div>
-                <div className="input-group">
-                    <div className="input-group-heading">
-                        <span className="input-group-required">*</span>
-                        Company Logo
-                    </div>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        ref={fileInput}
-                        onChange={(e) => setFile(e.target.files[0])}
-                        onClick={(event) => {
-                            console.log('click at input triggered')
-                            event.target.value = ''
-                        }}
-                    />
-                    {submitErrors && submitErrors.get('about') && (
-                        <div className="input-group-submit-error">
-                            {submitErrors.get('about')}
                         </div>
                     )}
                 </div>
